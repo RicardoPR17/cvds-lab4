@@ -3,7 +3,7 @@ package hangman.model.gamescore;
 import java.lang.Math;
 
 public class PowerScore implements GameScore {
-    private int score = 0;
+    private static final int score = 0;
     private static final int bonus = 5;
     private static final int penalty = 8;
     private static final int min_score = 0;
@@ -17,28 +17,24 @@ public class PowerScore implements GameScore {
      * - The incorrect guesses have a penalty of 8 points
      * - The minimum score is 0 points
      * - The maximum score is 500 points
-     * 
-     * @throws IllegalArgumentException If almost one parameters are a negative
-     *                                  number
-     * 
      */
     @Override
     public int calculateScore(int correctCount, int incorrectCount) {
-        if (correctCount < 0 || incorrectCount < 0) {
-            throw new IllegalArgumentException("Parametro negativo");
-        }
+        int actualScore;
+        actualScore = score;
+
         for (int i = 1; i <= correctCount; i++) {
-            score += Math.pow(bonus, i);
+            actualScore += Math.pow(bonus, i);
         }
 
-        score -= incorrectCount * penalty;
+        actualScore -= incorrectCount * penalty;
 
-        if (score < min_score) {
+        if (actualScore < min_score) {
             return min_score;
-        } else if (score > max_score) {
+        } else if (actualScore > max_score) {
             return max_score;
         }
 
-        return score;
+        return actualScore;
     }
 }

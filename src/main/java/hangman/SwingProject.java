@@ -26,7 +26,6 @@
 */
 package hangman;
 
-
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
@@ -40,7 +39,7 @@ public class SwingProject {
             "Nahid Enayatzadeh, 010164622",
             "Marc Deaso, 011179285",
             "Christopher Santos, ",
-            "Jazmin Guerrero, 009007193"};
+            "Jazmin Guerrero, 009007193" };
 
     public static final String PROJECT_NAME = "CS 245 - Swing Project v1";
 
@@ -53,10 +52,10 @@ public class SwingProject {
         return injector.getInstance(GUI.class);
     }
 
-    //method: main
-    //purpose: the entry-point to our application
+    // method: main
+    // purpose: the entry-point to our application
     public static void main(String[] args) {
-        createGUIUsingFactoryMethod().play();
+        createGUIUsingGuice().play();
     }
 
 }

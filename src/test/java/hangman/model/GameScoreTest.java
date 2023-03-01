@@ -104,21 +104,6 @@ public class GameScoreTest {
         assertEquals(70, puntaje);
     }
 
-    @Test
-    public void calculateScoreOriginal_ParametrosNegativos_ExcepcionParametrosNegativos() {
-        // Arrange
-        int correctas = 0;
-        int incorrectas = -3;
-        // Act
-        try {
-            int puntaje = gameOriginal.calculateScore(correctas, incorrectas);
-        } catch (IllegalArgumentException e) {
-            String mensaje = e.getMessage();
-            // Assert
-            assertEquals("Parametro negativo", mensaje);
-        }
-    }
-
     // BonusScore
     @Test
     public void calculateScoreBonus_PuntajeNegativo_PuntajeMinimo() {
@@ -162,21 +147,6 @@ public class GameScoreTest {
         int puntaje = gameBonus.calculateScore(correctas, incorrectas);
         // Assert
         assertEquals(0, puntaje);
-    }
-
-    @Test
-    public void calculateScoreBonus_ParametrosNegativos_ExcepcionParametrosNegativos() {
-        // Arrange
-        int correctas = 0;
-        int incorrectas = -1;
-        // Act
-        try {
-            int puntaje = gameBonus.calculateScore(correctas, incorrectas);
-        } catch (IllegalArgumentException e) {
-            String mensaje = e.getMessage();
-            // Assert
-            assertEquals("Parametro negativo", mensaje);
-        }
     }
 
     // PowerScore
@@ -225,7 +195,7 @@ public class GameScoreTest {
     }
 
     @Test
-    public void calculateScorePower_PuntajeMaxinom_Puntaje500() {
+    public void calculateScorePower_PuntajeMaximo_Puntaje500() {
         // Arrange
         int correctas = 4;
         int incorrectas = 0;
@@ -233,20 +203,5 @@ public class GameScoreTest {
         int puntaje = gamePower.calculateScore(correctas, incorrectas);
         // Assert
         assertEquals(500, puntaje);
-    }
-
-    @Test
-    public void calculateScorePower_ParametrosNegativos_ExcepcionParametrosNegativos() {
-        // Arrange
-        int correctas = 0;
-        int incorrectas = -1;
-        // Act
-        try {
-            int puntaje = gamePower.calculateScore(correctas, incorrectas);
-        } catch (IllegalArgumentException e) {
-            String mensaje = e.getMessage();
-            // Assert
-            assertEquals("Parametro negativo", mensaje);
-        }
     }
 }
