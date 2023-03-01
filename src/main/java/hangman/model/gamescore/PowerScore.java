@@ -17,6 +17,10 @@ public class PowerScore implements GameScore {
      * - The incorrect guesses have a penalty of 8 points
      * - The minimum score is 0 points
      * - The maximum score is 500 points
+     * 
+     * @throws IllegalArgumentException If almost one parameters are a negative
+     *                                  number
+     * 
      */
     @Override
     public int calculateScore(int correctCount, int incorrectCount) {

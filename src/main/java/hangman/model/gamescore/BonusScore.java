@@ -12,6 +12,10 @@ public class BonusScore implements GameScore {
      * - The correct guesses have a bonus of 10 points
      * - The incorrect guesses have a penalty of 5 points
      * - The minimum score is 0 points
+     * 
+     * @throws IllegalArgumentException If almost one parameters are a negative
+     *                                  number
+     * 
      */
     @Override
     public int calculateScore(int correctCount, int incorrectCount) {
