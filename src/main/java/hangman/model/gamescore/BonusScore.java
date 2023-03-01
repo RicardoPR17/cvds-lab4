@@ -15,6 +15,9 @@ public class BonusScore implements GameScore {
      */
     @Override
     public int calculateScore(int correctCount, int incorrectCount) {
+        if (correctCount < 0 || incorrectCount < 0) {
+            throw new IllegalArgumentException("Parametro negativo");
+        }
         score += correctCount * bonus;
         score -= incorrectCount * penalty;
         if (score < min_score) {

@@ -14,6 +14,9 @@ public class OriginalScore implements GameScore {
      */
     @Override
     public int calculateScore(int correctCount, int incorrectCount) {
+        if (correctCount < 0 || incorrectCount < 0) {
+            throw new IllegalArgumentException("Parametro negativo");
+        }
         score -= incorrectCount * wrong_letter;
         if (score <= min_score) {
             return min_score;
