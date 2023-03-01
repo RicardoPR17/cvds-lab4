@@ -1,7 +1,9 @@
 target
 .DS_Store
 .vscode
+.classpath
 /nbproject/
 .idea
 *.iml
 
+.settings
